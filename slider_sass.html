@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sass/slider_sass.css">
+</head>
+<body>
+    <div class="container">
+        <div class="slider">
+            <input type="radio" name="same" style="--i:1" checked="checked">
+            <div class="slide">
+                <img src="images/pexels-frank-k-1851243.jpg" alt="">
+                <article>
+                <h2>SLIDE ONE</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem doloribus nulla temporibus ducimus at repudiandae nemo eligendi, debitis eum voluptate unde maiores impedit libero quos, accusamus dolorum natus perferendis!</p>
+                </article>
+            </div>
+            <input type="radio" name="same" style="--i:1.1">
+            <div class="slide">
+                <img src="images/pexels-tima-miroshnichenko-5380649.jpg" alt="">
+                <article>
+                <h2>SLIDE TWO</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem doloribus nulla temporibus ducimus at repudiandae nemo eligendi, debitis eum voluptate unde maiores impedit libero quos, accusamus dolorum natus perferendis!</p>
+                </article>
+            </div>
+            <input type="radio" name="same" style="--i:1.2">
+            <div class="slide">
+                <img src="images/pexels-tima-miroshnichenko-5380635.jpg" alt="">
+                <article>
+                <h2>SLIDE THREE</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem doloribus nulla temporibus ducimus at repudiandae nemo eligendi, debitis eum voluptate unde maiores impedit libero quos, accusamus dolorum natus perferendis!</p>
+                </article>
+            </div>
+            <input type="radio" name="same" style="--i:1.3">
+            <div class="slide">
+                <img src="images/pexels-tima-miroshnichenko-5380605.jpg" alt="">
+                <article>
+                <h2>SLIDE FOUR</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem doloribus nulla temporibus ducimus at repudiandae nemo eligendi, debitis eum voluptate unde maiores impedit libero quos, accusamus dolorum natus perferendis!</p>
+                </article>
+            </div>
+            <input type="radio" name="same" style="--i:1.4">
+            <div class="slide">
+                <img src="images/pexels-tima-miroshnichenko-5380608.jpg" alt="">
+                <article>
+                <h2>SLIDE FIVE</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet rem doloribus nulla temporibus ducimus at repudiandae nemo eligendi, debitis eum voluptate unde maiores impedit libero quos, accusamus dolorum natus perferendis!</p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const inputs=document.querySelectorAll('input');
+        var i=0;
+        const myfun=()=>{
+            if(inputs[i].checked==true && i<inputs.length){
+                inputs[i].removeAttribute('checked','checked');
+                if(i<=3){
+                    inputs[i+1].setAttribute('checked','checked');
+                    i++;
+                }
+                else{
+                    inputs[0].setAttribute('checked','checked');
+                    i=0;
+                }
+            }
+            else{
+                console.log(i);
+                i=0;
+            }
+        }
+
+        setInterval(myfun,4000);
+    </script>
+</body>
+</html>
